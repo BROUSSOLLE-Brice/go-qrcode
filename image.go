@@ -183,7 +183,12 @@ func draw(mat matrix.Matrix, opt *outputImageOptions) image.Image {
 
 	// DONE(@yeqown): add logo image
 	if opt.logoImage() != nil {
-		// Draw logo image into rgba
+		// Draw logo image into rgb
+
+		if opt.logoFit {
+			opt.fitLogo(w, h)
+		}
+
 		bound := opt.logo.Bounds()
 		upperLeft, lowerRight := bound.Min, bound.Max
 		logoWidth, logoHeight := lowerRight.X-upperLeft.X, lowerRight.Y-upperLeft.Y

@@ -5,6 +5,7 @@ import (
 	"image"
 	"image/color"
 
+	"github.com/nfnt/resize"
 	"github.com/yeqown/go-qrcode/matrix"
 )
 
@@ -32,6 +33,9 @@ type outputImageOptions struct {
 	// NOTE: logo only should has 1/5 size of QRCode image
 	logo image.Image
 
+	//  log must fit to the qrcode size
+	logoFit bool
+
 	// qrWidth width of each qr block
 	qrWidth int
 
@@ -40,7 +44,6 @@ type outputImageOptions struct {
 
 	// imageEncoder specify which file format would be encoded the QR image.
 	imageEncoder ImageEncoder
-
 }
 
 func (oo *outputImageOptions) backgroundColor() color.Color {
@@ -67,6 +70,12 @@ func (oo *outputImageOptions) logoImage() image.Image {
 	}
 
 	return oo.logo
+}
+
+func (oo *outputImageOptions) fitLogo(width, height int) {
+	if logo := oo.logoImage(); logo != nil {
+		oo.logo = resize.Thumbnail(uint(width/5), uint(height/5), logo, resize.Lanczos3)
+	}
 }
 
 func (oo *outputImageOptions) qrBlockWidth() int {

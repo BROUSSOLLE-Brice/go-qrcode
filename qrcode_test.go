@@ -123,7 +123,7 @@ func Test_New_WithOutputOption_Logo(t *testing.T) {
 	qrc, err := New("Test_New_WithOutputOption_Logo",
 		WithBgColorRGBHex("#b8de6f"),
 		WithFgColorRGBHex("#f1e189"),
-		WithLogoImageFilePNG("./testdata/logo.png"), // png required
+		WithLogoImageFilePNG("./testdata/logo.png", false), // png required
 	)
 	if err != nil {
 		t.Errorf("could not generate QRCode: %v", err)

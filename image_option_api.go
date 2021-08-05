@@ -66,15 +66,16 @@ func WithFgColorRGBHex(hex string) ImageOption {
 }
 
 // WithLogoImage image should only has 1/5 width of QRCode at most
-func WithLogoImage(img image.Image) ImageOption {
+func WithLogoImage(img image.Image, fit bool) ImageOption {
 	return newFuncDialOption(func(oo *outputImageOptions) {
 		oo.logo = img
+		oo.logoFit = fit
 	})
 }
 
 // WithLogoImageFileJPEG load image from file, jpeg is required.
 // image should only has 1/5 width of QRCode at most
-func WithLogoImageFileJPEG(f string) ImageOption {
+func WithLogoImageFileJPEG(f string, fit bool) ImageOption {
 	return newFuncDialOption(func(oo *outputImageOptions) {
 		fd, err := os.Open(f)
 		if err != nil {
@@ -89,12 +90,13 @@ func WithLogoImageFileJPEG(f string) ImageOption {
 		}
 
 		oo.logo = img
+		oo.logoFit = fit
 	})
 }
 
 // WithLogoImageFilePNG load image from file, PNG is required.
 // image should only has 1/5 width of QRCode at most
-func WithLogoImageFilePNG(f string) ImageOption {
+func WithLogoImageFilePNG(f string, fit bool) ImageOption {
 	return newFuncDialOption(func(oo *outputImageOptions) {
 		fd, err := os.Open(f)
 		if err != nil {
@@ -109,6 +111,7 @@ func WithLogoImageFilePNG(f string) ImageOption {
 		}
 
 		oo.logo = img
+		oo.logoFit = fit
 	})
 }
 
@@ -163,4 +166,3 @@ func WithCustomImageEncoder(encoder ImageEncoder) ImageOption {
 		oo.imageEncoder = encoder
 	})
 }
-
