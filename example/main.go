@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	qrcode "github.com/yeqown/go-qrcode"
+	qrcode "github.com/BROUSSOLLE-Brice/go-qrcode"
 )
 
 func main() {
@@ -13,7 +13,7 @@ func main() {
 }
 
 func repo() {
-	qrc, err := qrcode.New("https://github.com/yeqown/go-qrcode")
+	qrc, err := qrcode.New("https://github.com/BROUSSOLLE-Brice/go-qrcode")
 	if err != nil {
 		fmt.Printf("could not generate QRCode: %v", err)
 	}

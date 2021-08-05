@@ -4,8 +4,8 @@ import (
 	"image/color"
 	"testing"
 
+	"github.com/BROUSSOLLE-Brice/go-qrcode/matrix"
 	"github.com/stretchr/testify/assert"
-	"github.com/yeqown/go-qrcode/matrix"
 )
 
 func Test_WithBuiltinImageEncoder(t *testing.T) {

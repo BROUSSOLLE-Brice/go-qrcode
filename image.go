@@ -10,7 +10,7 @@ import (
 
 	"github.com/fogleman/gg"
 
-	"github.com/yeqown/go-qrcode/matrix"
+	"github.com/BROUSSOLLE-Brice/go-qrcode/matrix"
 )
 
 // Draw image with matrix

@@ -4,11 +4,11 @@ import (
 	"flag"
 	"fmt"
 
-	qrcode "github.com/yeqown/go-qrcode"
+	qrcode "github.com/BROUSSOLLE-Brice/go-qrcode"
 )
 
 var (
-	contentFlag = flag.String("c", "https://github.com/yeqown/go-qrcode", "input your content to encode")
+	contentFlag = flag.String("c", "https://github.com/BROUSSOLLE-Brice/go-qrcode", "input your content to encode")
 	outputFlag  = flag.String("o", "./qrcode.jpeg", "output filename")
 )
 

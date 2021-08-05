@@ -1,7 +1,7 @@
 package main
 
 import (
-	qrcode "github.com/yeqown/go-qrcode"
+	qrcode "github.com/BROUSSOLLE-Brice/go-qrcode"
 )
 
 type smallerCircle struct {

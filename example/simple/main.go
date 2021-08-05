@@ -1,6 +1,6 @@
 package main
 
-import "github.com/yeqown/go-qrcode"
+import "github.com/BROUSSOLLE-Brice/go-qrcode"
 
 func main() {
 	config := qrcode.Config{

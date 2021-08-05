@@ -11,7 +11,7 @@ import (
 	"github.com/yeqown/reedsolomon"
 	"github.com/yeqown/reedsolomon/binary"
 
-	"github.com/yeqown/go-qrcode/matrix"
+	"github.com/BROUSSOLLE-Brice/go-qrcode/matrix"
 )
 
 var (

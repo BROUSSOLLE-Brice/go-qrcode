@@ -5,8 +5,8 @@ import (
 	"image"
 	"image/color"
 
+	"github.com/BROUSSOLLE-Brice/go-qrcode/matrix"
 	"github.com/nfnt/resize"
-	"github.com/yeqown/go-qrcode/matrix"
 )
 
 // defaultOutputImageOption default output image background color and etc options
